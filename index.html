@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Shoemaker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            background: #34495e;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin-right: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem 0;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .content-box {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            line-height: 2;
+        }
+
+        .links-section a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .links-section a:hover {
+            text-decoration: underline;
+        }
+
+        .paper {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .paper:last-child {
+            border-bottom: none;
+        }
+
+        .paper-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-authors {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-description {
+            margin-top: 0.5rem;
+            color: #555;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .video-link {
+            display: inline-block;
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            nav li {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .content-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Mark Shoemaker</h1>
+            <p>Associate Professor, Colorado State University</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <li><a href="#research" onclick="showSection('research')">Research</a></li>
+            <li><a href="#teaching" onclick="showSection('teaching')">Teaching</a></li>
+            <li><a href="#grad-students" onclick="showSection('grad-students')">Grad Students</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="active">
+            <div class="content-box">
+                <div class="contact-info">
+                    <p><strong>Associate Professor</strong></p>
+                    <p>Colorado State University</p>
+                    <p>Email: mark(dot)shoemaker(at)colostate.edu</p>
+                    <p><a href="https://drive.google.com/file/d/1MwOEH8IkL229z827o8dGATFU7E-vTEbP/view?usp=sharing" target="_blank">Curriculum Vitae</a></p>
+                    <p>Office: Weber 128</p>
+                    <p><a href="http://www.math.colostate.edu/" target="_blank">Department of Mathematics</a></p>
+                    <p>1874 Campus Delivery</p>
+                    <p>Fort Collins, CO 80523-1874</p>
+                </div>
+            </div>
+
+            <div class="content-box links-section">
+                <h2>Links</h2>
+                <ul>
+                    <li><a href="https://sites.google.com/a/wagsymposium.org/current/" target="_blank">WAGS</a>: the Western Algebraic Geometry Symposium, a twice yearly meeting of algebraic geometers.</li>
+                    <li><a href="https://sites.google.com/view/fragmentseminar/" target="_blank">FRAGMENT</a>: the Front Range Algebra, GeoMEtry and Number Theory Seminar.</li>
+                    <li><a href="https://sites.google.com/view/mergcsu/home" target="_blank">MERG</a>: the Moduli and Enumeration Research Group at CSU.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="research">
+            <div class="content-box">
+                <h2>Research</h2>
+                <p>My mathematical interests lie in enumerative geometry, Gromov-Witten theory, and related aspects of mirror symmetry. The current focus of my research uses predictions from mathematical physics to relate Gromov-Witten invariants to other classes of algebro-geometric objects.</p>
+
+                <h3>Recorded Talks</h3>
+                <ul>
+                    <li>(General mathematics audience) <a href="https://youtu.be/27iU4-KIpcs" target="_blank">What is Mirror Symmetry?</a>, CSU "Who is...?" Seminar, Dec. 2020.</li>
+                    <li><a href="https://www.math.columbia.edu/~ccliu/Seminars/20211025-video.mp4" target="_blank">Towards a Mirror theorem for GLSMs</a>, Columbia University, Oct. 2021.</li>
+                    <li><a href="https://www.youtube.com/watch?v=PsrbbPN1pO8" target="_blank">Genus-zero Gromov-Witten theory under extremal transitions</a>, Harvard CMSA, Mar. 2020.</li>
+                    <li>Integral transforms and quantum correspondences, <a href="https://www.birs.ca/events/2019/5-day-workshops/19w5171/videos/watch/201911191016-Shoemaker.html" target="_blank">BIRS, Nov. 2020</a> and <a href="http://www.fields.utoronto.ca/talks/Integral-transforms-and-quantum-correspondences" target="_blank">The Fields Institute, Sep. 2019</a>.</li>
+                    <li><a href="https://www.msri.org/workshops/816/schedules/23889" target="_blank">Matrix factorizations in Gromov-Witten theory</a>, MSRI, Mar. 2018.</li>
+                </ul>
+
+                <h3>Papers</h3>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2502.08762" target="_blank">Quantum spectrum and Gamma structures for standard flips</a></div>
+                    <div class="paper-authors">With Yefeng Shen, submitted.</div>
+                    <div class="paper-description">For a smooth projective variety X, the quantum spectrum of X is the set of eigenvalues of quantum multiplication by c₁(X). This depends on a given specialization of the Novikov parameter q of quantum multiplication. We show that for X a projective bundle, blow-up, or flip, the quantum spectrum, when restricted to exceptional curve classes, is compatible with a natural semi-orthogonal decomposition of the derived category of X.</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2404.12303" target="_blank">Wall crossing and the Fourier-Mukai transform for Grassmann flops</a></div>
+                    <div class="paper-authors">With Nathan Priddis and Yaoxiong Wen, SIGMA (2025).</div>
+                    <div class="paper-description">We prove the crepant transformation conjecture for relative Grassmann flops over a smooth base B. We show that the I-functions of the respective GIT quotients are related by analytic continuation and a symplectic transformation.</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2403.05240" target="_blank">Seiberg-like duality for resolutions of determinantal varieties</a></div>
+                    <div class="paper-authors">With Nathan Priddis and Yaoxiong Wen, submitted.</div>
+                    <div class="paper-description">We study the genus-zero Gromov-Witten theory of two natural resolutions of determinantal varieties, termed the PAX and PAXY models.</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2211.09218" target="_blank">A Kleiman criterion for GIT stack quotients</a></div>
+                    <div class="paper-authors">Submitted.</div>
+                    <div class="paper-description">Kleiman's criterion states that, for X a projective scheme, a divisor D is ample if and only if it pairs positively with every element of the closure of the cone of curves.</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2108.12360" target="_blank">Towards a mirror theorem for GLSMs</a></div>
+                    <div class="paper-authors">Submitted.</div>
+                    <div class="paper-description">A gauged linear sigma model (GLSM) consists roughly of a group G, a vector space V on which G acts, a regular function on V which is invariant under the group action, and a choice of character θ of G.</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2107.05751" target="_blank">Quantum Serre duality for quasimaps</a></div>
+                    <div class="paper-authors">With Levi Heath, European Journal of Mathematics (2022).</div>
+                    <div class="paper-description">Let Z be a smooth subvariety of a projective variety X, defined by the vanishing of a section of a vector bundle E → X.</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2006.09907" target="_blank">Extremal transitions via quantum Serre duality</a></div>
+                    <div class="paper-authors">With Rongxiao Mi, Mathematische Annalen (2022).</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/1802.05247" target="_blank">Fundamental Factorization of a GLSM, Part I: Construction</a></div>
+                    <div class="paper-authors">With Ionut Ciocan-Fontanine, David Favero, Jérémy Guéré, and Bumsig Kim, Memoirs of the American Mathematical Society (2023).</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/1811.12298" target="_blank">Virtual classes for hypersurfaces via two-periodic complexes</a></div>
+                    <div class="paper-authors">In: Singularities, Mirror Symmetry, and the Gauged Linear Sigma Model. Contemporary Mathematics (2021).</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/1811.01879" target="_blank">Integral Transforms and Quantum Correspondences</a></div>
+                    <div class="paper-authors">Advances in Mathematics (2020).</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/1811.01888" target="_blank">Narrow Quantum D-modules and Quantum Serre Duality</a></div>
+                    <div class="paper-authors">Ann. Inst. Fourier (2021).</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="http://arxiv.org/abs/1604.03491" target="_blank">Gromov-Witten Theory of Toric Birational Transformations</a></div>
+                    <div class="paper-authors">With Pedro Acosta, Int. Math. Res. Not. (2019).</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="http://arxiv.org/abs/1504.04396" target="_blank">Quantum Cohomology of Toric Blowups and Landau-Ginzburg Correspondences</a></div>
+                    <div class="paper-authors">With Pedro Acosta, Algebraic Geometry (2018).</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="http://arxiv.org/abs/1410.5503" target="_blank">A proof of the Landau-Ginzburg/Calabi-Yau correspondence via the crepant transformation conjecture</a></div>
+                    <div class="paper-authors">With Y.-P. Lee and Nathan Priddis, Ann. Scient. Éc. Norm. Sup. (2016).</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="http://arxiv.org/abs/1309.6262" target="_blank">A Landau-Ginzburg/Calabi-Yau correspondence for the mirror quintic</a></div>
+                    <div class="paper-authors">With Nathan Priddis, Ann. Inst. Fourier (2016).</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="http://arxiv.org/abs/1309.1150" target="_blank">Geometric Quantization with Applications to Gromov-Witten Theory</a></div>
+                    <div class="paper-authors">With Emily Clader and Nathan Priddis, chapter in B-Model Gromov-Witten Theory (2018).</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="http://arxiv.org/abs/1209.5016" target="_blank">Birationality of Berglund-Hübsch-Krawitz Mirrors</a></div>
+                    <div class="paper-authors">Comm. Math. Phys. (2014).</div>
+                </div>
+
+                <div class="paper">
+                    <div class="paper-title"><a href="http://arxiv.org/abs/1209.2487" target="_blank">A Mirror Theorem for the Mirror Quintic</a></div>
+                    <div class="paper-authors">With Y.-P. Lee, Geom. Topol. (2014).</div>
+                </div>
+
+                <h3>Other Writing</h3>
+                <ul>
+                    <li><a href="https://drive.google.com/file/d/1EQREiRxP_TaZwad_4LwDT5PKYh9PfSoL/view?usp=sharing" target="_blank">Enumerative Geometry Notes</a>. These expository notes were written for a two week summer workshop at the University of Costa Rica in 2019.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="teaching">
+            <div class="content-box">
+                <h2>Teaching</h2>
+
+                <h3>Current Courses</h3>
+                <ul>
+                    <li>Math 469: Linear Algebra (course webpage accessible through CANVAS)</li>
+                    <li>Math 673: Algebraic Geometry II</li>
+                </ul>
+
+                <h3>Video Lectures</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=yS3E_1ZHpL8&list=PLK9kVSmpZYRRosVUVR-qDq00U8IyaiO2x&index=9" target="_blank">Non-Euclidean geometry</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=GH-q2VH1T3k&list=PLK9kVSmpZYRQxz3QqifiMc1bt_m1F7fds" target="_blank">Complex analysis</a></li>
+                </ul>
+
+                <h3>Past Courses - Colorado State University</h3>
+                <ul>
+                    <li>Math 672: Algebraic Geometry</li>
+                    <li>Math 469: Linear Algebra (Spring 2022, 2021)</li>
+                    <li>Math 105: Patterns and Phenomena (Spring 2022)</li>
+                    <li>Math 419: Complex Analysis (Fall 2020)</li>
+                    <li>Math 676: Enumerative Geometry (Fall 2019)</li>
+                    <li>Math 470: Euclidean and Non-Euclidean Geometry (Spring 2020, 2019, 2018, 2017)</li>
+                    <li>Math 472: Topology (Fall 2018)</li>
+                    <li>Math 161-220: Calculus II - honors section (Fall 2017)</li>
+                    <li>Math 301: Introduction to Combinatorial Theory (Fall 2016)</li>
+                </ul>
+
+                <h3>Past Courses - University of Utah</h3>
+                <ul>
+                    <li>Math 3210: Foundations of Analysis I (Spring 2016)</li>
+                    <li>Math 4030: Foundations of Algebra (Fall 2015)</li>
+                    <li>Math 1321: Adv. Eng. Calculus II (Spring, Fall 2014)</li>
+                    <li>Math 1260: AP Calculus II (Fall 2013)</li>
+                </ul>
+
+                <h3>Past Courses - University of Michigan</h3>
+                <ul>
+                    <li>Math 116: Calculus II (Spring 2010, Fall 2011)</li>
+                    <li>Math 115: Calculus I (Spring, Fall 2009)</li>
+                    <li>Math 105: Pre-Calculus (Fall 2008)</li>
+                </ul>
+
+                <h3>Other Teaching Experience</h3>
+                <ul>
+                    <li>Course Coordinator: Co-coordinated roughly 30 sections of Math 105: Pre-Calculus at the University of Michigan (Fall 2010)</li>
+                    <li>Universidad de Costa Rica, Undergraduate Mini-Course, 12-hour lecture series (Aug 2019)</li>
+                    <li>Snowbird, Crossing Walls In Enumerative Geometry Workshop, 5 lecture series (May 2018)</li>
+                    <li>Speaker at "Who is—?" Seminar at CSU (Fall 2020)</li>
+                    <li>Speaker at CSU Math Circle (Summer 2017)</li>
+                    <li>Speaker and participant at MfA Utah Teachers' Math Circle (Spring/Fall 2015)</li>
+                    <li>Instructor at Michigan Math and Science Scholars with Professor Mel Rochester and Emily Clader (Summer 2011, 2012)</li>
+                    <li>Teacher and Mentor at Canada/USA Mathcamp (Summer 2009)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="grad-students">
+            <div class="content-box">
+                <h2>Information for Graduate Students</h2>
+                <p>If you are a graduate student considering working with me, please stop by my office or send me an email and we can chat!</p>
+
+                <p>Here is a talk I gave at the CSU "Who is...?" Seminar describing some of my research interests: <a href="https://youtu.be/27iU4-KIpcs" target="_blank">What is Mirror Symmetry?</a></p>
+
+                <p>If you would like to see a little more of the kind of math I think about, consider looking at the following notes: <a href="https://drive.google.com/file/d/1EQREiRxP_TaZwad_4LwDT5PKYh9PfSoL/view?usp=sharing" target="_blank">Enumerative Geometry Notes</a>. These were written for a two week summer workshop at the University of Costa Rica in 2019.</p>
+
+                <p>Here is <a href="https://sites.lsa.umich.edu/math-graduates/best-practices-advice/finding-mentors/" target="_blank">some general advice for choosing an advisor</a> which could be helpful.</p>
+
+                <h3>Former Graduate Students</h3>
+                <ul>
+                    <li><strong>Jae Hwang</strong> (co-advised with Renzo Cavalieri), graduated in 2024, accepted postdoctoral position at the Beijing International Center for Mathematical Research.</li>
+                    <li><strong>Levi Heath</strong>, graduated 2022, accepted postdoctoral position at the University of Nebraska-Lincoln.</li>
+                    <li><strong>Adam Afandi</strong> (co-advised with Renzo Cavalieri), graduated 2021, accepted postdoctoral position at the University of Münster.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Mark Shoemaker. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.getElementById(sectionId).classList.add('active');
+            
+            window.scrollTo(0, 0);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('home');
+        });
+    </script>
+</body>
+</html>
