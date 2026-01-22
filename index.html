@@ -46,13 +46,40 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
+        .nav-toggle {
+            display: block;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            width: 100%;
+            text-align: left;
+            transition: background 0.3s;
+        }
+
+        .nav-toggle:hover {
+            background: #34495e;
+        }
+
+        .nav-toggle::before {
+            content: 'â° ';
+            margin-right: 0.5rem;
+        }
+
         nav ul {
             list-style: none;
-            display: flex;
+            display: none;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
             flex-wrap: wrap;
+        }
+
+        nav ul.show {
+            display: flex;
         }
 
         nav li {
@@ -298,6 +325,16 @@
             background: linear-gradient(180deg, #16213e 0%, #0f3460 100%);
             box-shadow: 0 4px 20px rgba(100, 200, 255, 0.2);
             border-bottom: 2px solid #64c8ff;
+        }
+
+        body.trek-theme .nav-toggle {
+            background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+            color: #64c8ff;
+            border-bottom: 2px solid #64c8ff;
+        }
+
+        body.trek-theme .nav-toggle:hover {
+            background: linear-gradient(180deg, #16213e 0%, #0f3460 100%);
         }
 
         body.trek-theme nav ul {
@@ -591,11 +628,12 @@
     </header>
 
     <nav>
-        <ul>
+        <button class="nav-toggle" onclick="toggleNav()">Navigation Menu</button>
+        <ul id="nav-menu">
             <li><a href="#home" onclick="showSection('home')"><span class="normal-nav">Home</span><span class="trek-nav">Main Bridge</span></a></li>
             <li><a href="#research" onclick="showSection('research')"><span class="normal-nav">Research</span><span class="trek-nav">Science Lab</span></a></li>
             <li><a href="#teaching" onclick="showSection('teaching')"><span class="normal-nav">Teaching</span><span class="trek-nav">Academy</span></a></li>
-            <li><a href="#grad-students" onclick="showSection('grad-students')"><span class="normal-nav">Grad Students</span><span class="trek-nav">Crew Quarters</span></a></li>
+            <li><a href="#grad-students" onclick="showSection('grad-students')"><span class="normal-nav">Grad Students</span><span class="trek-nav">Crew Members</span></a></li>
         </ul>
     </nav>
 
@@ -630,7 +668,7 @@
             <div class="content-box">
                 <h2 class="normal-heading">Research</h2>
                 <h2 class="trek-heading">Science Database</h2>
-                <p>My mathematical interests include enumerative geometry, Gromov-Witten theory, and mirror symmetry. </p>
+                <p>My research is centered around enumerative geometry, Gromov-Witten theory, and related aspects of mirror symmetry.</p>
 
                 <h3 class="normal-heading">Recorded Talks</h3>
                 <h3 class="trek-heading">Recorded Transmissions</h3>
@@ -774,14 +812,14 @@
                 </ul>
 
                 <h3 class="normal-heading">Video Lectures</h3>
-                <h3 class="trek-heading">Holographic Lectures</h3>
+                <h3 class="trek-heading">Holodeck Programs</h3>
                 <ul>
                     <li><a href="https://www.youtube.com/watch?v=yS3E_1ZHpL8&list=PLK9kVSmpZYRRosVUVR-qDq00U8IyaiO2x&index=9" target="_blank">Non-Euclidean geometry</a></li>
                     <li><a href="https://www.youtube.com/watch?v=GH-q2VH1T3k&list=PLK9kVSmpZYRQxz3QqifiMc1bt_m1F7fds" target="_blank">Complex analysis</a></li>
                 </ul>
 
                 <h3 class="normal-heading">Past Courses - Colorado State University</h3>
-                <h3 class="trek-heading">Previous Assignments - Colorado State University</h3>
+                <h3 class="trek-heading">Previous Trainings - Colorado State University</h3>
                 <ul>
                     <li>Math 369: Introduction to Linear Algebra</li>
                     <li>Math 672/673: Algebraic Geometry</li>
@@ -796,7 +834,7 @@
                 </ul>
 
                 <h3 class="normal-heading">Past Courses - University of Utah</h3>
-                <h3 class="trek-heading">Previous Assignments - University of Utah</h3>
+                <h3 class="trek-heading">Previous Trainings - University of Utah</h3>
                 <ul>
                     <li>Math 3210: Foundations of Analysis I (Spring 2016)</li>
                     <li>Math 4030: Foundations of Algebra (Fall 2015)</li>
@@ -805,7 +843,7 @@
                 </ul>
 
                 <h3 class="normal-heading">Past Courses - University of Michigan</h3>
-                <h3 class="trek-heading">Previous Assignments - University of Michigan</h3>
+                <h3 class="trek-heading">Previous Trainings - University of Michigan</h3>
                 <ul>
                     <li>Math 116: Calculus II (Spring 2010, Fall 2011)</li>
                     <li>Math 115: Calculus I (Spring, Fall 2009)</li>
@@ -863,6 +901,9 @@
 
     <script>
         function showSection(sectionId) {
+            // Prevent default anchor behavior
+            event.preventDefault();
+            
             const sections = document.querySelectorAll('section');
             sections.forEach(section => {
                 section.classList.remove('active');
@@ -870,7 +911,21 @@
             
             document.getElementById(sectionId).classList.add('active');
             
-            window.scrollTo({top: 0, behavior: 'instant'});
+            // Close nav menu after selecting a page
+            document.getElementById('nav-menu').classList.remove('show');
+            
+            // Force scroll to top immediately
+            window.scrollTo(0, 0);
+            
+            // Also scroll to top after a short delay to ensure it takes effect
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 10);
+        }
+
+        function toggleNav() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('show');
         }
 
         function toggleTheme() {
@@ -882,7 +937,7 @@
                 button.textContent = 'To boldly go...';
             } else {
                 body.classList.add('trek-theme');
-                button.textContent = 'Beam Me Down!';
+                button.textContent = 'Beam me down, Scotty!';
             }
         }
 
