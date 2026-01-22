@@ -38,7 +38,7 @@
             margin-bottom: 0.5rem;
         }
 
-        nav {
+         nav {
             background: #34495e;
             position: sticky;
             top: 0;
@@ -62,11 +62,6 @@
 
         .nav-toggle:hover {
             background: #34495e;
-        }
-
-        .nav-toggle::before {
-            content: ' â ¡ ';
-            margin-right: 0.5rem;
         }
 
         nav ul {
@@ -119,6 +114,7 @@
         section.active {
             display: block;
         }
+
 
         h2 {
             color: #2c3e50;
@@ -628,7 +624,7 @@
     </header>
 
     <nav>
-        <button class="nav-toggle" onclick="toggleNav()">Navigation Menu</button>
+        <button class="nav-toggle" onclick="toggleNav()">â¡ Menu</button>
         <ul id="nav-menu">
             <li><a href="#home" onclick="showSection('home')"><span class="normal-nav">Home</span><span class="trek-nav">Main Bridge</span></a></li>
             <li><a href="#research" onclick="showSection('research')"><span class="normal-nav">Research</span><span class="trek-nav">Science Lab</span></a></li>
